@@ -108,5 +108,4 @@ function evaluateGrade($grade) {
 echo evaluateGrade("C") . "\n";
 echo evaluateGrade("E") . "\n";
 
-
 ?>
