@@ -59,28 +59,23 @@ $personalInfos = [
 
 // Q3 オブジェクト-1
 class Student {
-  public $studentId;
-  public $studentName;
-
-  public function __construct($id, $name) {
-      $this->studentId = $id;
-      $this->studentName = $name;
-  }
-
-  public function attend($subject = null) {
-      if ($subject) {
-          echo "{$this->studentName}は{$subject}の授業に参加しました。学籍番号：{$this->studentId}\n";
-      } else {
-          echo "授業に出席しました。\n";
-      }
-  }
+    public $studentId;
+    public $studentName;
+  
+    public function __construct($id, $name) {
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+// Q4 オブジェクト-2
+public function attend($subject) {
+    echo "{$this->studentName}は{$subject}の授業に参加しました。学籍番号：{$this->studentId}\n";
+}
 }
 
-$suzuki = new Student(100, 'スズキ');
-echo "学籍番号{$suzuki->studentId}番の生徒は{$suzuki->studentName}です。\n";
+$yamada = new Student(120, '山田');
+var_dump($yamada);
 
-// Q4 オブジェクト-2
-$suzuki->attend('PHP');
+$yamada->attend('PHP');
 
 // Q5 定義済みクラス
 // Q5 問題１
