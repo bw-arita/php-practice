@@ -89,39 +89,39 @@ $today = new DateTime();
 $diff = $today->diff($birth);
 echo "あの日から{$diff->days}日経過しました。\n";
 
-// 問題1
+//追加課題
+
+//問題１
 class Pokemon
 {
     public $name;
     public $element;
-    public $skill;
 
-    public function __construct($name, $element, $skill)
+    public function __construct($name, $element)
     {
         $this->name = $name;
         $this->element = $element;
-        $this->skill = $skill;
     }
 
-    public function attack()
+    public function attack($skill)
     {
-        echo "いけ、{$this->element}ポケモン{$this->name}！！{$this->skill}だ！！";
+        echo "いけ、{$this->element}ポケモン{$this->name}！！{$skill}だ！！";
     }
 }
 
-$pikachu = new Pokemon("ピカチュウ", "ネズミ", "10万ボルト");
-$pikachu->attack();
+$pikachu = new Pokemon("ピカチュウ", "ネズミ");
+$pikachu->attack("10万ボルト");
 
-// 問題2
+//問題２
 class Employee
 {
     public $employeeId;
     public $employeeName;
 
-    public function __construct($id, $name)
+    public function __construct($employeeId, $employeeName)
     {
-        $this->employeeId = $id;
-        $this->employeeName = $name;
+        $this->employeeId = $employeeId;
+        $this->employeeName = $employeeName;
     }
 
     public function checkIn()
@@ -132,5 +132,4 @@ class Employee
 
 $employee = new Employee(1, "山田太郎");
 $employee->checkIn();
-
 ?>
