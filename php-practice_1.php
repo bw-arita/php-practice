@@ -17,12 +17,10 @@ echo "現在時刻は、" . $date . "です。\n";
 $device = "mac";
 if ($device === "windows") {
     echo "使用OSは、windowsです。\n";
+} elseif ($device === "mac") {
+    echo "使用OSは、macです。\n";
 } else {
-    if ($device === "mac") {
-        echo "使用OSは、macです。\n";
-    } else {
-        echo "どちらでもありません。\n";
-    }
+    echo "どちらでもありません。\n";
 }
 
 // Q5 条件分岐-2 三項演算子
@@ -107,6 +105,5 @@ function evaluateGrade($grade) {
 }
 echo evaluateGrade("C") . "\n";
 echo evaluateGrade("E") . "\n";
-
 
 ?>

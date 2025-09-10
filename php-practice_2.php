@@ -59,28 +59,23 @@ $personalInfos = [
 
 // Q3 オブジェクト-1
 class Student {
-  public $studentId;
-  public $studentName;
-
-  public function __construct($id, $name) {
-      $this->studentId = $id;
-      $this->studentName = $name;
-  }
-
-  public function attend($subject = null) {
-      if ($subject) {
-          echo "{$this->studentName}は{$subject}の授業に参加しました。学籍番号：{$this->studentId}\n";
-      } else {
-          echo "授業に出席しました。\n";
-      }
-  }
+    public $studentId;
+    public $studentName;
+  
+    public function __construct($id, $name) {
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+// Q4 オブジェクト-2
+public function attend($subject) {
+    echo "{$this->studentName}は{$subject}の授業に参加しました。学籍番号：{$this->studentId}\n";
+}
 }
 
-$suzuki = new Student(100, 'スズキ');
-echo "学籍番号{$suzuki->studentId}番の生徒は{$suzuki->studentName}です。\n";
+$yamada = new Student(120, '山田');
+var_dump($yamada);
 
-// Q4 オブジェクト-2
-$suzuki->attend('PHP');
+$yamada->attend('PHP');
 
 // Q5 定義済みクラス
 // Q5 問題１
@@ -93,4 +88,48 @@ $birth = new DateTime('1992-04-25');
 $today = new DateTime();
 $diff = $today->diff($birth);
 echo "あの日から{$diff->days}日経過しました。\n";
+
+//追加課題
+
+//問題１
+class Pokemon
+{
+    public $name;
+    public $element;
+
+    public function __construct($name, $element)
+    {
+        $this->name = $name;
+        $this->element = $element;
+    }
+
+    public function attack($skill)
+    {
+        echo "いけ、{$this->element}ポケモン{$this->name}！！{$skill}だ！！";
+    }
+}
+
+$pikachu = new Pokemon("ピカチュウ", "ネズミ");
+$pikachu->attack("10万ボルト");
+
+//問題２
+class Employee
+{
+    public $employeeId;
+    public $employeeName;
+
+    public function __construct($employeeId, $employeeName)
+    {
+        $this->employeeId = $employeeId;
+        $this->employeeName = $employeeName;
+    }
+
+    public function checkIn()
+    {
+        echo "{$this->employeeName}が出勤しました。社員ID：{$this->employeeId}";
+    }
+}
+
+$employee = new Employee(1, "山田太郎");
+$employee->checkIn();
 ?>
